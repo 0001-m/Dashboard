@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+MERN Dashboard Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack MERN (MongoDB, Express.js, React, Node.js) dashboard application with authentication, data visualization, and API integration.
 
-## Available Scripts
+Features
+Frontend (React + MUI + Redux)
 
-In the project directory, you can run:
+Built with React 19 and MUI v7 for modern UI components
 
-### `npm start`
+Data visualization with Nivo charts (@nivo/bar, @nivo/pie, @nivo/geo)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Custom theming via theme.js
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+State management with Redux Toolkit
 
-### `npm test`
+Organized folder structure with reusable components and scenes
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Backend (Node.js + Express + MongoDB)
 
-### `npm run build`
+RESTful API with Express 5
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Security via Helmet and CORS
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Database models with Mongoose
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Logging with Morgan
 
-### `npm run eject`
+Hot reload with Nodemon
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Project Structure
+├── client (React frontend)
+│   ├── src
+│   │   ├── components/    # Reusable UI components
+│   │   ├── scenes/        # Pages & feature modules
+│   │   ├── state/         # Redux store & API setup
+│   │   ├── theme.js       # Custom MUI theme
+│   │   └── App.js
+│   └── public/            # Static assets
+│
+├── server (Node.js backend)
+│   ├── controllers/       # Route controllers
+│   ├── models/            # Mongoose models
+│   ├── routes/            # API routes
+│   ├── data/              # Sample seed data
+│   └── index.js           # Entry point
+│
+└── tree.js (helper script to print folder tree)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Installation & Setup
+1. Clone the Repository
+git clone https://github.com/your-username/mern-dashboard.git
+cd mern-dashboard
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Setup Server
+cd server
+npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+Create a .env file inside /server with:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+PORT=5000
+MONGO_URL=your_mongodb_connection_string
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+Run the backend:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+npm run dev
 
-### Analyzing the Bundle Size
+3. Setup Client
+cd ../client
+npm install
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Scripts
+Client
 
-### Making a Progressive Web App
+npm start → Start React app (development)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+npm run build → Build React app for production
 
-### Advanced Configuration
+npm test → Run tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Server
 
-### Deployment
+npm run dev → Start backend with Nodemon
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+npm start → Start backend with Node
 
-### `npm run build` fails to minify
+Tech Stack
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Frontend: React, Material-UI, Redux Toolkit, Nivo Charts, React Router
+
+Backend: Node.js, Express.js, Mongoose, Helmet, CORS, Morgan
+
+Database: MongoDB
