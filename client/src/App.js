@@ -4,10 +4,10 @@ import { createTheme } from "@mui/material/styles";
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Layout from "scenes/layout";  
+import Layout from "scenes/layout";
 import { themeSettings } from "theme";
-import Products from "scenes/products"
-
+import Products from "scenes/products";
+import Customers from "scenes/customers";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -20,11 +20,13 @@ function App() {
           <CssBaseline />{" "}
           {/* css reset - makes your code have more css defaults automatically*/}
           <Routes>
-            <Route element= {<Layout /> }>
-              <Route path="/" element={<Navigate to = "/dashboard" replace/> } />  {/*if we go to the default home page, we are goint to be navigating to dashboard route and we are gonna render the dashboard component */}
-              <Route path="/dashboard" element={<Dashboard/>}/>
-              <Route path="/products" element={<Products/>}/>
-              </Route>
+            <Route element={<Layout />}>
+              <Route path="/" element={<Navigate to="/dashboard" replace />} />{" "}
+              {/*if we go to the default home page, we are goint to be navigating to dashboard route and we are gonna render the dashboard component */}
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/customers" element={<Customers/>}></Route>
+            </Route>
           </Routes>
         </ThemeProvider>
       </BrowserRouter>
